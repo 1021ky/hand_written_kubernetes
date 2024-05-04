@@ -52,3 +52,5 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 >
 ```
 
+最後に、本にあるとおり、goで書いたwebサーバをコンテナで動かした。
+
