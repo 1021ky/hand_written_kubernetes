@@ -54,3 +54,22 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 最後に、本にあるとおり、goで書いたwebサーバをコンテナで動かした。
 
+## 第二章のメモ
+
+kindを使ってクラスタを作った
+
+```
+kind create cluster --image=kindest/node:v1.29.0
+```
+
+kindのクラスタを削除する
+
+```
+kind delete cluster
+```
+
+
+kubectlのconfig情報は、`~/.kube/config`に保存されている
+
+--kubeconfig フラグや KUBECONFIG 環境変数を利用して設定する ことも可能ということ
+
