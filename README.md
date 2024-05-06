@@ -73,3 +73,53 @@ kubectlのconfig情報は、`~/.kube/config`に保存されている
 
 --kubeconfig フラグや KUBECONFIG 環境変数を利用して設定する ことも可能ということ
 
+## 第四章のメモ
+
+クラスター作ったままでやらないといけないので、kindでクラスターを作る
+```
+kind create cluster --image=kindest/node:v1.29.0
+```
+
+kubectlを使って、podの情報を知ることができる
+
+システムコンポーネントのpodを確認するには
+
+```
+kubectl get pod --namespace kube-system
+```
+
+デフォルトのnamespaceのnodeを確認するには
+
+```
+kubectl get nodes
+```
+
+これでクラスタがあるかないかも簡易的に確認できる
+
+```
+> kind get clusters
+kind
+```
+
+デフォルトのnamespaceのPodを確認するには
+
+```
+kubectl get pod --namespace default
+```
+
+defaultのnamespaceにnginxをデプロイする
+
+```
+kubectl apply --filename ./nginx.yaml  --namespace default
+```
+
+宣言的にリソースを作成するからapplyを使うのはしっくりくる
+
+Podができているか確認する
+
+```
+kubectl get pod --namespace default
+```
+
+
+
